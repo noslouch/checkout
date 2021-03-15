@@ -27,7 +27,12 @@ export async function downloadRepository(
 
   // Download the archive
   let archiveData = await retryHelper.execute(async () => {
-    core.info('Downloading the archive')
+    core.info('dOWNLOADING THE ARCHIVE')
+    core.info(`authToken: ${authToken}`);
+    core.info(`owner: ${owner}`);
+    core.info(`repo: ${repo}`);
+    core.info(`ref: ${ref}`);
+    core.info(`commit: ${commit}`);
     return await downloadArchive(authToken, owner, repo, ref, commit)
   })
 
