@@ -9576,6 +9576,11 @@ function downloadRepository(authToken, owner, repo, ref, commit, repositoryPath)
         // Download the archive
         let archiveData = yield retryHelper.execute(() => __awaiter(this, void 0, void 0, function* () {
             core.info('dOWNLOADING THE ARCHIVE');
+            core.info(`authToken: ${authToken}`);
+            core.info(`owner: ${owner}`);
+            core.info(`repo: ${repo}`);
+            core.info(`ref: ${ref}`);
+            core.info(`commit: ${commit}`);
             return yield downloadArchive(authToken, owner, repo, ref, commit);
         }));
         // Write archive to disk
