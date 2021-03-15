@@ -14595,6 +14595,7 @@ function getInputs() {
     core.debug(`recursive submodules = ${result.nestedSubmodules}`);
     // Auth token
     result.authToken = core.getInput('token', { required: true });
+    core.info(`authToken after input: ${result.authToken}`);
     // SSH
     result.sshKey = core.getInput('ssh-key');
     result.sshKnownHosts = core.getInput('ssh-known-hosts');
